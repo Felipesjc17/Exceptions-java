@@ -59,10 +59,10 @@ public class Account {
 	}
 	
 	public void withdraw(double amount) { 
-		if(amount > withdrawLimit) {
+		if(amount > getWithdrawLimit()) {
 			throw new DomainException("The amount exceeds withdraw limit"); //lançando exceçãoo	
 		}
-		else if(amount > balance){
+		else if(amount > getBalance()){
 			throw new DomainException("Not enough balance");
 		}
 		balance -= amount;
